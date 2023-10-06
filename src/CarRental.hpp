@@ -10,7 +10,10 @@ class Date{
         int ano;
     public:
         Date();
-        int diasEntre(Date, Date);
+        Date(int, int, int);
+        Date(string);
+        int diasEntre(Date);
+        static int diasEntre(Date, Date);
 };
 
 class Veiculo{

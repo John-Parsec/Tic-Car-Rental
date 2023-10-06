@@ -13,7 +13,6 @@ Date::Date(){
 
         std::cout << "Digite uma data no formato dd/mm/aaaa: ";
         std::cin >> str;
-        str = str;
 
         d = str.substr(0, 2);
         m = str.substr(3, 2);
@@ -45,4 +44,119 @@ Date::Date(){
     this->dia = id;
     this->mes = im;
     this->ano = ia;
+}
+
+Date::Date(int dia, int mes, int ano){
+    std::string d, m, a, str, strm;
+    int id, im, ia;
+    
+    for(bool valido = 0; valido == 0;){
+        valido = 1;
+
+        id = dia;
+        im = mes;
+        ia = ano;
+
+        if(im < 1 || im > 12 || id < 1 || id > 31)
+            valido = 0;
+
+        if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+            valido = 0;
+
+        if(valido && im == 2)
+        {
+            if (ia % 4 == 0 && id > 29)
+                valido = 0;
+            else if (ia % 4 !=0 && id > 28)
+                valido = 0;
+        }
+
+        if(!valido){
+            cout << "Essa data e invalida. ";
+        }
+    }
+
+    this->dia = id;
+    this->mes = im;
+    this->ano = ia;
+}
+
+Date::Date(string str){
+    std::string d, m, a, strm;
+    int id, im, ia;
+    
+    for(bool valido = 0; valido == 0;)
+    {
+        valido = 1;
+
+        d = str.substr(0, 2);
+        m = str.substr(3, 2);
+        a = str.substr(6, 4);
+
+        id = stoi(d);
+        im = stoi(m);
+        ia = stoi(a);
+
+        if(im < 1 || im > 12 || id < 1 || id > 31)
+            valido = 0;
+
+        if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+            valido = 0;
+
+        if(valido && im == 2)
+        {
+            if (ia % 4 == 0 && id > 29)
+                valido = 0;
+            else if (ia % 4 !=0 && id > 28)
+                valido = 0;
+        }
+
+        if(!valido){
+            cout << "Essa data e invalida. ";
+        }
+    }
+
+    this->dia = id;
+    this->mes = im;
+    this->ano = ia;
+}
+
+int Date::diasEntre(Date data){
+    int dias = 0;
+    int ano = this->ano;
+    int mes = this->mes;
+    int dia = this->dia;
+    while(ano != data.ano || mes != data.mes || dia != data.dia){
+        dias++;
+        dia++;
+        if(dia > 31){
+            dia = 1;
+            mes++;
+        }
+        if(mes > 12){
+            mes = 1;
+            ano++;
+        }
+    }
+    return dias;
+}
+
+int Date::diasEntre(Date data1, Date data2){
+    int dias = 0;
+    int ano = data1.ano;
+    int mes = data1.mes;
+    int dia = data1.dia;
+    while(ano != data2.ano || mes != data2.mes || dia != data2.dia){
+        dias++;
+        dia++;
+        if(dia > 31){
+            dia = 1;
+            mes++;
+        }
+        if(mes > 12){
+            mes = 1;
+            ano++;
+        }
+    }
+    return dias;
 }

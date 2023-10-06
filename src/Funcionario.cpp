@@ -33,6 +33,4 @@ void Funcionario::finalizar_aluguel(Aluguel aluguel, Date dataDevolcuacao){
             historicoAlugueis[i] = aluguel;
         }
     }
-
-
 };

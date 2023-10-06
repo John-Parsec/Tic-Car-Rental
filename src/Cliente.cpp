@@ -20,7 +20,6 @@ vector<Aluguel> Cliente::getAlugueis(){
     return this->alugueis;
 }
 
-/*retorna o valor do aluguel no período ou -1 se o veículo estiver alugado.*/
 float Cliente::cotar_aluguel(Veiculo veiculo, Date dataInicial, Date dataFinal){
     if(!veiculo.getDisponivel()){
         return -1;
