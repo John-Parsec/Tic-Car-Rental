@@ -90,26 +90,6 @@ class Funcionario: public Usuario{
         void finalizar_aluguel(Aluguel, Date);
 };
 int Funcionario::id = 0;
-
-class Veiculo{
-    private:
-        string placa;
-        string marca;
-        string modelo;
-        float precoPorDia;
-        int anoFabricacao;
-        bool disponivel = 1;
-    public:
-        Veiculo(string, string, string, float, int);
-        string getPlaca();
-        string getModelo();
-        string getMarca();
-        float getPrecoPorDia();
-        int getAnoFabricacao();
-        void setPrecoPorDia(float);
-        void setPlaca(string);
-};
-
 class Aluguel{
     private:
         string codigo;
