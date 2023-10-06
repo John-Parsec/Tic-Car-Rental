@@ -123,3 +123,15 @@ int Date::diasEntre(Date data1, Date data2){
     }
     return dias;
 }
+
+bool Date::dataNaoNula(){
+    if(dia == 0)
+        {return 0;}
+    return 1;
+}
+
+bool Date::dataNaoNula(Date data){
+    if(data.dia == 0)
+        {return 0;}
+    return 1;
+}

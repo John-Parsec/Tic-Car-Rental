@@ -14,6 +14,8 @@ class Date{
         Date(string);
         int diasEntre(Date);
         static int diasEntre(Date, Date);
+        bool dataNaoNula();
+        static bool dataNaoNula(Date);
 };
 
 class Veiculo{
