@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -16,6 +16,7 @@ class Date{
         static int diasEntre(Date, Date);
         bool dataNaoNula();
         static bool dataNaoNula(Date);
+        static Date dataAtual();
 };
 
 class Veiculo{

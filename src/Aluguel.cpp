@@ -102,10 +102,19 @@ void Aluguel::setAdicional(float adicional){
 
 
 float Aluguel::calcularValorFinal(){
-    return 0.0;
+    return Date::diasEntre(dataInicio, dataDevolucao) * veiculo.getPrecoPorDia();
 }
 
 string Aluguel::verificaStatus(){
-    //agendada, iniciada, atrasada, finalizada
+    Date dataAtual = Date::dataAtual();
+
+    if(Date::dataNaoNula(dataDevolucao))
+        {return "Finalizada";}
+    else if(Date::diasEntre(dataTermino, dataAtual) > 0)
+        {return "Atrasada";}
+    else if(Date::diasEntre(dataInicio, dataAtual) >= 0)
+        {return "Iniciada";}
+    else if(Date::diasEntre(dataAtual, dataInicio) > 0)
+        {return "Agendada";}
     return "";
 }

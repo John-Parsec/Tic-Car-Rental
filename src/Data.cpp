@@ -135,3 +135,19 @@ bool Date::dataNaoNula(Date data){
         {return 0;}
     return 1;
 }
+
+Date dataAtual(){
+    int dia, mes, ano;
+
+    time_t rawtime;
+    struct tm* timeinfo;
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    dia = timeinfo->tm_mday;
+    mes = (timeinfo->tm_mon) + 1;
+    dia = (timeinfo->tm_year) + 1900;
+
+    Date dataAtual(dia, mes, ano);
+    return dataAtual;
+}
