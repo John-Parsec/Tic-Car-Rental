@@ -51,7 +51,7 @@ class Cliente: public Usuario{
 class Funcionario: public Usuario{
     private:
         string habilitacao;
-        vector<Aluguel> historicoAlugueis (vector<Aluguel>);
+        vector<Aluguel> historicoAlugueis;
     
     public:
         Aluguel alugar_veiculo(Cliente, Veiculo, Date, Date);
