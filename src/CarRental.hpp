@@ -129,7 +129,7 @@ class Aluguel{
         void setDesconto(float);
         void setAdicional(float);
 
-        float calcular_valor_final();
-        string verifica_status();
+        float calcularValorFinal();
+        string verificaStatus();
 };
 

@@ -101,11 +101,11 @@ void Aluguel::setAdicional(float adicional){
 }
 
 
-float Aluguel::calcular_valor_final(){
+float Aluguel::calcularValorFinal(){
     return 0.0;
 }
 
-string Aluguel::verifica_status(){
+string Aluguel::verificaStatus(){
     //agendada, iniciada, atrasada, finalizada
     return "";
 }
