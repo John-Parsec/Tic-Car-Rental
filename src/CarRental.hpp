@@ -65,16 +65,19 @@ class Veiculo{
         string modelo;
         float precoPorDia;
         int anoFabricacao;
+        bool disponivel;
     
     public:
         Veiculo(string, string, string, float, int);
         string getPlaca();
         string getModelo();
         string getMarca();
+        bool getDisponivel();
         float getPrecoPorDia();
         int getAnoFabricacao();
         void setPrecoPorDia(float);
         void setPlaca(string);
+        void setDisponivel(bool);
 };
 
 class Aluguel{
