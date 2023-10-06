@@ -2,6 +2,7 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 class Date{
     private:
         int dia;
@@ -10,10 +11,37 @@ class Date{
     public:
         Date();
         int diasEntre(Date, Date);
+=======
+class Aluguel;
+
+struct Date{
+    int dia;
+    int mes;
+    int ano;
+>>>>>>> 76a8142be2202e279c3e73c1e6cebc4c53a4b443
 };
 
-class Aluguel;
-class Veiculo;
+class Veiculo{
+    private:
+        string placa;
+        string marca;
+        string modelo;
+        float precoPorDia;
+        int anoFabricacao;
+        bool disponivel;
+    
+    public:
+        Veiculo(string, string, string, float, int);
+        string getPlaca();
+        string getModelo();
+        string getMarca();
+        bool getDisponivel();
+        float getPrecoPorDia();
+        int getAnoFabricacao();
+        void setPrecoPorDia(float);
+        void setPlaca(string);
+        void setDisponivel(bool);
+};
 
 class Usuario{
     protected:
@@ -55,12 +83,21 @@ class Cliente: public Usuario{
 class Funcionario: public Usuario{
     private:
         string habilitacao;
-        vector<Aluguel> historicoAlugueis (vector<Aluguel>);
+        vector<Aluguel> historicoAlugueis;
+        static int id;
     
     public:
+        Funcionario();
+        Funcionario(string, string, string, string, string);
+        string getHabilitacao();
+        void setHabilitacao(string);
+        
+        vector<Aluguel> getHistoricoAlugueis();
+
         Aluguel alugar_veiculo(Cliente, Veiculo, Date, Date);
         void finalizar_aluguel(Aluguel, Date);
 };
+<<<<<<< HEAD
 
 class Veiculo{
     private:
@@ -80,6 +117,9 @@ class Veiculo{
         void setPrecoPorDia(float);
         void setPlaca(string);
 };
+=======
+int Funcionario::id = 0;
+>>>>>>> 76a8142be2202e279c3e73c1e6cebc4c53a4b443
 
 class Aluguel{
     private:
