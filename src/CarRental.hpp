@@ -8,6 +8,8 @@ class Date{
         int mes;
         int ano;
     public:
+        Date();
+        int diasEntre(Date, Date);
 };
 
 class Aluguel;

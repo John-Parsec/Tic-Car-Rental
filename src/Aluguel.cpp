@@ -94,5 +94,5 @@ float Aluguel::calcular_valor_final(){
 }
 
 string Aluguel::verifica_status(){
-
+    //agendada, iniciada, atrasada, finalizada
 }
