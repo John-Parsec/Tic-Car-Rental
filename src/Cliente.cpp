@@ -35,7 +35,7 @@ Aluguel Cliente::solicita_aluguel(Veiculo veiculo, Date dataInicial, Date dataFi
     aluguel.setDataInicio(dataInicial);
     aluguel.setDataTermino(dataFinal);
 
-    this->alugueis.push_back(aluguel);
+    //this->alugueis.push_back(aluguel);
     
     return aluguel;
 }

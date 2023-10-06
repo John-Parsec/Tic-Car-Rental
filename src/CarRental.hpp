@@ -26,6 +26,7 @@ class Veiculo{
         bool disponivel;
     
     public:
+        Veiculo();
         Veiculo(string, string, string, float, int);
         string getPlaca();
         string getModelo();
