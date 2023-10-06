@@ -2,7 +2,7 @@
 
 using namespace std;
 
-<<<<<<< HEAD
+class Aluguel;
 class Date{
     private:
         int dia;
@@ -11,14 +11,6 @@ class Date{
     public:
         Date();
         int diasEntre(Date, Date);
-=======
-class Aluguel;
-
-struct Date{
-    int dia;
-    int mes;
-    int ano;
->>>>>>> 76a8142be2202e279c3e73c1e6cebc4c53a4b443
 };
 
 class Veiculo{
@@ -97,7 +89,7 @@ class Funcionario: public Usuario{
         Aluguel alugar_veiculo(Cliente, Veiculo, Date, Date);
         void finalizar_aluguel(Aluguel, Date);
 };
-<<<<<<< HEAD
+int Funcionario::id = 0;
 
 class Veiculo{
     private:
@@ -117,9 +109,6 @@ class Veiculo{
         void setPrecoPorDia(float);
         void setPlaca(string);
 };
-=======
-int Funcionario::id = 0;
->>>>>>> 76a8142be2202e279c3e73c1e6cebc4c53a4b443
 
 class Aluguel{
     private:
