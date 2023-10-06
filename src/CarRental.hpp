@@ -2,10 +2,12 @@
 
 using namespace std;
 
-struct Date{
-    int dia;
-    int mes;
-    int ano;
+class Date{
+    private:
+        int dia;
+        int mes;
+        int ano;
+    public:
 };
 
 class Aluguel;
@@ -65,7 +67,7 @@ class Veiculo{
         string modelo;
         float precoPorDia;
         int anoFabricacao;
-    
+        bool disponivel = 1;
     public:
         Veiculo(string, string, string, float, int);
         string getPlaca();
