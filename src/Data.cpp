@@ -4,46 +4,9 @@
 #include<string>
 
 Date::Date(){
-    std::string d, m, a, str, strm;
-    int id, im, ia;
-    
-    for(bool valido = 0; valido == 0;)
-    {
-        valido = 1;
-
-        std::cout << "Digite uma data no formato dd/mm/aaaa: ";
-        std::cin >> str;
-
-        d = str.substr(0, 2);
-        m = str.substr(3, 2);
-        a = str.substr(6, 4);
-
-        id = stoi(d);
-        im = stoi(m);
-        ia = stoi(a);
-
-        if(im < 1 || im > 12 || id < 1 || id > 31)
-            valido = 0;
-
-        if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
-            valido = 0;
-
-        if(valido && im == 2)
-        {
-            if (ia % 4 == 0 && id > 29)
-                valido = 0;
-            else if (ia % 4 !=0 && id > 28)
-                valido = 0;
-        }
-
-        if(!valido){
-            cout << "Essa data e invalida. ";
-        }
-    }
-
-    this->dia = id;
-    this->mes = im;
-    this->ano = ia;
+    this->dia = 0;
+    this->mes = 0;
+    this->ano = 0;
 }
 
 Date::Date(int dia, int mes, int ano){
@@ -160,3 +123,47 @@ int Date::diasEntre(Date data1, Date data2){
     }
     return dias;
 }
+
+bool Date::dataNaoNula(){
+    if(dia == 0)
+        {return 0;}
+    return 1;
+}
+
+bool Date::dataNaoNula(Date data){
+    if(data.dia == 0)
+        {return 0;}
+    return 1;
+}
+
+Date dataAtual(){
+    int dia, mes, ano;
+
+    time_t rawtime;
+    struct tm* timeinfo;
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    dia = timeinfo->tm_mday;
+    mes = (timeinfo->tm_mon) + 1;
+    dia = (timeinfo->tm_year) + 1900;
+
+    Date dataAtual(dia, mes, ano);
+    return dataAtual;
+}
+
+string Date::toString(){
+    string str = "";
+    if(dia < 10)
+        str += "0";
+    str += to_string(dia);
+    str += "/";
+    if(mes < 10)
+        str += "0";
+    str += to_string(mes);
+    str += "/";
+    str += to_string(ano);
+    return str;
+}
+
+

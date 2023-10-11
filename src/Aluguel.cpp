@@ -1,5 +1,17 @@
 #include "CarRental.hpp"
 
+Aluguel::Aluguel(){
+    codigo = "";
+    cliente = Cliente();
+    veiculo = Veiculo();
+    funcionario = Funcionario();
+    dataInicio = Date();
+    dataTermino = Date();
+    dataDevolucao = Date();
+    desconto = 0;
+    adicional = 0;
+}
+
 Aluguel::Aluguel(string codigo, Cliente cliente, Veiculo veiculo, Funcionario funcionario, 
 Date dataInicio, Date dataTermino, Date dataDevolucao, float desconto, float adicional){
 
@@ -89,10 +101,20 @@ void Aluguel::setAdicional(float adicional){
 }
 
 
-float Aluguel::calcular_valor_final(){
-
+float Aluguel::calcularValorFinal(){
+    return Date::diasEntre(dataInicio, dataDevolucao) * veiculo.getPrecoPorDia();
 }
 
-string Aluguel::verifica_status(){
-    //agendada, iniciada, atrasada, finalizada
+string Aluguel::verificaStatus(){
+    Date dataAtual = Date::dataAtual();
+
+    if(Date::dataNaoNula(dataDevolucao))
+        {return "Finalizada";}
+    else if(Date::diasEntre(dataTermino, dataAtual) > 0)
+        {return "Atrasada";}
+    else if(Date::diasEntre(dataInicio, dataAtual) >= 0)
+        {return "Iniciada";}
+    else if(Date::diasEntre(dataAtual, dataInicio) > 0)
+        {return "Agendada";}
+    return "";
 }

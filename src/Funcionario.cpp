@@ -57,6 +57,7 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
     
     return a;
 };
+
 void Funcionario::finalizar_aluguel(Aluguel aluguel, Date dataDevolcuacao){
     aluguel.setDataDevolucao(dataDevolcuacao);
     for(int i = 0; i < historicoAlugueis.size(); i++){

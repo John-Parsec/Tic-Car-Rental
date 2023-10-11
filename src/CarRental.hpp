@@ -3,6 +3,7 @@
 using namespace std;
 
 class Aluguel;
+
 class Date{
     private:
         int dia;
@@ -14,6 +15,10 @@ class Date{
         Date(string);
         int diasEntre(Date);
         static int diasEntre(Date, Date);
+        bool dataNaoNula();
+        static bool dataNaoNula(Date);
+        static Date dataAtual();
+        string toString();
 };
 
 class Veiculo{
@@ -26,6 +31,7 @@ class Veiculo{
         bool disponivel;
     
     public:
+        Veiculo();
         Veiculo(string, string, string, float, int);
         string getPlaca();
         string getModelo();
@@ -128,7 +134,7 @@ class Aluguel{
         void setDesconto(float);
         void setAdicional(float);
 
-        float calcular_valor_final();
-        string verifica_status();
+        float calcularValorFinal();
+        string verificaStatus();
 };
 
