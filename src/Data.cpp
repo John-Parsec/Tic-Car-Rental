@@ -207,6 +207,8 @@ string Date::toString(){
     str += to_string(ano);
     return str;
 };
+
+//const nao deixa alterar
 bool Date::operator<(const Date &other) {
         if (ano < other.ano) {
             return true;
@@ -221,6 +223,6 @@ bool Date::operator<(const Date &other) {
                 return dia < other.dia;
             }
         }
-    };
+};
 
 

@@ -6,8 +6,13 @@ int main() {
     Veiculo veiculo("XSA23", "fox", "bc", 12.65, 2016);
     Date dataInicio(1, 1, 2018);
     Date dataTermino(2, 1, 2018);
+    if(dataInicio < dataTermino)
+        std::cout << "menor q" << std::endl;
+    else
+        std::cout << "maior q igual" << std::endl;
 
     funcionario.alugar_veiculo(cliente, veiculo, dataInicio, dataTermino);
+    //funcionario.alugar_veiculo(cliente, veiculo, dataInicio, dataTermino);
 
     return 0;
 }
