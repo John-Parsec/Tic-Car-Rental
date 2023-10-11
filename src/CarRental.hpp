@@ -19,6 +19,7 @@ class Date{
         static bool dataNaoNula(Date);
         static Date dataAtual();
         string toString();
+        bool operator<(const Date&);
 };
 
 class Veiculo{
