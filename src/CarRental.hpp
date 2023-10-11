@@ -1,3 +1,6 @@
+#ifndef CARRENTAL_HPP
+#define CARRENTAL_HPP
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -138,3 +141,4 @@ class Aluguel{
         string verificaStatus();
 };
 
+#endif
