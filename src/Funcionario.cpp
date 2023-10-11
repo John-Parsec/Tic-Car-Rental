@@ -23,7 +23,7 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
     for(int i = 0; i < this->getHistoricoAlugueis().size(); i++){
         if(this->getHistoricoAlugueis()[i].getVeiculo().getPlaca() == veiculo.getPlaca()){
             string status;
-            status =  this->getHistoricoAlugueis()[i].verifica_status();
+            status =  this->getHistoricoAlugueis()[i].verificaStatus();
             if(status == "finalizada"){
                 aluga = true;
                 cout <<"Carro disponivel para agendamento"<<endl;
