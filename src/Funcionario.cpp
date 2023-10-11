@@ -20,6 +20,9 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
     a.setCliente(cliente);
     a.setDataInicio(dataInicio);
     a.setDataTermino(dataTermino);
+    cout << "i: " << a.getDataInicio().toString() << endl;
+    cout << "f: " << a.getDataTermino().toString() << endl;
+
     a.setFuncionario(*this);
     cout << "Aluguel" <<this->getHistoricoAlugueis().size() << endl;
 

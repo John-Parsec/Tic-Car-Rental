@@ -8,6 +8,10 @@ int main() {
     Date dataTermino(2, 1, 2018);
 
     funcionario.alugar_veiculo(cliente, veiculo, dataInicio, dataTermino);
+    
+    Date dataI(1, 1, 2018);
+    Date dataT(2, 1, 2018);
+    funcionario.alugar_veiculo(cliente, veiculo, dataI, dataT);
 
     return 0;
 }
