@@ -1,4 +1,5 @@
 #include "CarRental.hpp"
+#include <chrono>
 
 Funcionario::Funcionario(){
     this->habilitacao = "";
@@ -21,15 +22,16 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
     for(int i = 0; i < this->getHistoricoAlugueis().size(); i++){
         if(this->getHistoricoAlugueis()[i].getVeiculo().getPlaca() == veiculo.getPlaca()){
             string status;
-            status =  this->getHistoricoAlugueis()[i].verifica_status();
-            if(status == "finalizada"){
+
+            status =  this->getHistoricoAlugueis()[i].verificaStatus();
+            if(status == "Finalizada"){
                 aluga = true;
                 cout <<"Carro disponivel para agendamento"<<endl;
-            }else if(status== "agendada" and this->getHistoricoAlugueis()[i].getDataDevolucao() < dataInicio){
+            }else if(status== "Agendada" and this->getHistoricoAlugueis()[i].getDataDevolucao() < dataInicio){
                 aluga = true;
                 cout <<"Carro disponivel para agendamento"<<endl;
                 
-            }else if(status == "iniciada" and this->getHistoricoAlugueis()[i].getDataDevolucao() < dataInicio){
+            }else if(status == "Iniciada" and this->getHistoricoAlugueis()[i].getDataDevolucao() < dataInicio){
                 aluga = true;
                 cout <<"Carro disponivel para agendamento"<<endl;
             }
