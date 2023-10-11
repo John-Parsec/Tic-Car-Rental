@@ -2,7 +2,7 @@
 
 #include<iostream>
 #include<string>
-
+#include<ctime>
 Date::Date(){
     this->dia = 0;
     this->mes = 0;
@@ -28,7 +28,7 @@ Date::Date(int dia, int mes, int ano){
 
         if(valido && im == 2)
         {
-            if (ia % 4 == 0 && id > 29)
+            if (((ia % 4 == 0 && ia % 100 != 0) || ia % 400 == 0)  && id > 29)
                 valido = 0;
             else if (ia % 4 !=0 && id > 28)
                 valido = 0;
@@ -68,7 +68,7 @@ Date::Date(string str){
 
         if(valido && im == 2)
         {
-            if (ia % 4 == 0 && id > 29)
+            if (((ia % 4 == 0 && ia % 100 != 0) || ia % 400 == 0)  && id > 29)
                 valido = 0;
             else if (ia % 4 !=0 && id > 28)
                 valido = 0;
@@ -89,6 +89,8 @@ int Date::diasEntre(Date data){
     int ano = this->ano;
     int mes = this->mes;
     int dia = this->dia;
+    
+    /*
     while(ano != data.ano || mes != data.mes || dia != data.dia){
         dias++;
         dia++;
@@ -101,6 +103,26 @@ int Date::diasEntre(Date data){
             ano++;
         }
     }
+    //*/
+    
+    time_t tempo1 = 0;
+    time_t tempo2 = 0;
+    
+    tm tm1 = *gmtime(&tempo1);
+    tm tm2 = *gmtime(&tempo2);
+    
+    tm1.tm_mday = dia;
+    tm1.tm_mon = mes - 1;
+    tm1.tm_year = ano - 1900;
+    
+    tm2.tm_mday = data.dia;
+    tm2.tm_mon = data.mes - 1;
+    tm2.tm_year = data.ano - 1900;
+    
+    time_t newt1 = mktime(&tm1);
+    time_t newt2 = mktime(&tm2);
+
+    dias = (difftime(newt2, newt1)) / (3600 * 24);
     return dias;
 }
 
@@ -109,6 +131,8 @@ int Date::diasEntre(Date data1, Date data2){
     int ano = data1.ano;
     int mes = data1.mes;
     int dia = data1.dia;
+    
+    /*
     while(ano != data2.ano || mes != data2.mes || dia != data2.dia){
         dias++;
         dia++;
@@ -121,6 +145,26 @@ int Date::diasEntre(Date data1, Date data2){
             ano++;
         }
     }
+    //*/
+
+    time_t tempo1 = 0;
+    time_t tempo2 = 0;
+    
+    tm tm1 = *gmtime(&tempo1);
+    tm tm2 = *gmtime(&tempo2);
+    
+    tm1.tm_mday = dia;
+    tm1.tm_mon = mes - 1;
+    tm1.tm_year = ano - 1900;
+    
+    tm2.tm_mday = data2.dia;
+    tm2.tm_mon = data2.mes - 1;
+    tm2.tm_year = data2.ano - 1900;
+    
+    time_t newt1 = mktime(&tm1);
+    time_t newt2 = mktime(&tm2);
+
+    dias = (difftime(newt2, newt1)) / (3600 * 24);
     return dias;
 }
 
