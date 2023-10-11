@@ -1,3 +1,6 @@
+#ifndef CAR_RENTAL_HPP
+#define CAR_RENTAL_HPP
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -96,7 +99,7 @@ class Funcionario: public Usuario{
         Aluguel alugar_veiculo(Cliente, Veiculo, Date, Date);
         void finalizar_aluguel(Aluguel, Date);
 };
-int Funcionario::id = 0;
+
 class Aluguel{
     private:
         string codigo;
@@ -136,3 +139,10 @@ class Aluguel{
         string verificaStatus();
 };
 
+
+#endif
+
+//#ifndef FUNC_ID
+//#define FUNC_ID
+//int Funcionario::id = 0;
+//#endif

@@ -136,7 +136,7 @@ bool Date::dataNaoNula(Date data){
     return 1;
 }
 
-Date dataAtual(){
+Date Date::dataAtual(){
     int dia, mes, ano;
 
     time_t rawtime;

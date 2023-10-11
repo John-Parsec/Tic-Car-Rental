@@ -1,5 +1,7 @@
 #include "CarRental.hpp"
 
+int Funcionario::id = 0;
+
 Funcionario::Funcionario(){
     this->habilitacao = "";
 };
