@@ -12,16 +12,20 @@ Funcionario::Funcionario(string cpf, string nome, string endereco, string telefo
 };
 
 Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataInicio, Date dataTermino){
+    cout << "Aluguel" << endl;
     Aluguel a;
-    bool aluga = false;
+    bool aluga = true;
     a.setCodigo(to_string(id++));
     a.setVeiculo(veiculo);
     a.setCliente(cliente);
     a.setDataInicio(dataInicio);
     a.setDataTermino(dataTermino);
     a.setFuncionario(*this);
+    cout << "Aluguel" <<this->getHistoricoAlugueis().size() << endl;
+
     
     for(int i = 0; i < this->getHistoricoAlugueis().size(); i++){
+        cout << i << endl;
         if(this->getHistoricoAlugueis()[i].getVeiculo().getPlaca() == veiculo.getPlaca()){
             string status;
 
@@ -42,7 +46,12 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
                 aluga = false;
             }
             
-            if(aluga){
+            
+            return Aluguel();
+        }
+    
+    }
+    if(aluga){
                 float valor;
                 cout<< "Qual o valor do adicional:"<<endl;
                 cin >> valor;
@@ -54,10 +63,6 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
                 return a;
             }
             //retorna aluguel vazio
-            return Aluguel();
-        }
-    }
-
     
     return a;
 };
