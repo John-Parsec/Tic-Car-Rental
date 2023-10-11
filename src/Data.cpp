@@ -151,3 +151,19 @@ Date Date::dataAtual(){
     Date dataAtual(dia, mes, ano);
     return dataAtual;
 }
+
+string Date::toString(){
+    string str = "";
+    if(dia < 10)
+        str += "0";
+    str += to_string(dia);
+    str += "/";
+    if(mes < 10)
+        str += "0";
+    str += to_string(mes);
+    str += "/";
+    str += to_string(ano);
+    return str;
+}
+
+

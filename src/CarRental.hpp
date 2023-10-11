@@ -6,6 +6,7 @@
 using namespace std;
 
 class Aluguel;
+
 class Date{
     private:
         int dia;
@@ -20,6 +21,7 @@ class Date{
         bool dataNaoNula();
         static bool dataNaoNula(Date);
         static Date dataAtual();
+        string toString();
 };
 
 class Veiculo{
