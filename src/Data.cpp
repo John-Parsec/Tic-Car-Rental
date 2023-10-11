@@ -151,6 +151,7 @@ Date dataAtual(){
     Date dataAtual(dia, mes, ano);
     return dataAtual;
 }
+
 string Date::toString(){
     string str = "";
     if(dia < 10)

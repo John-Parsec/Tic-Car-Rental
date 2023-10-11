@@ -3,6 +3,7 @@
 using namespace std;
 
 class Aluguel;
+
 class Date{
     private:
         int dia;
