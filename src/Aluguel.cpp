@@ -117,4 +117,15 @@ string Aluguel::verificaStatus(){
     else if(Date::diasEntre(dataAtual, dataInicio) > 0)
         {return "Agendada";}
     return "";
+
+    /*
+    Data de Devolução não é nula = já entregou, ou seja, finalizada.
+
+    Data de Devolução não é nula (não entregou) e a data atual passa da data de termino, ou seja, atrasado
+
+    Data atual é >= dia de Inicio de aluguel, mas ainda está antes ou dentro da data de termino, iniciado
+
+    Data atual é antes da data inicial, ou seja, não foi iniciada, mas já está agendada
+    */
 }
+
