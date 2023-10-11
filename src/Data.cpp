@@ -10,33 +10,30 @@ Date::Date(){
 }
 
 Date::Date(int dia, int mes, int ano){
-    std::string d, m, a, str, strm;
     int id, im, ia;
     
-    for(bool valido = 0; valido == 0;){
-        valido = 1;
+    id = dia;
+    im = mes;
+    ia = ano;
 
-        id = dia;
-        im = mes;
-        ia = ano;
+    bool valido = 1;
 
-        if(im < 1 || im > 12 || id < 1 || id > 31)
+    if(im < 1 || im > 12 || id < 1 || id > 31)
+        valido = 0;
+
+    if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+        valido = 0;
+
+    if(valido && im == 2)
+    {
+        if (ia % 4 == 0 && id > 29)
             valido = 0;
-
-        if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+        else if (ia % 4 !=0 && id > 28)
             valido = 0;
+    }
 
-        if(valido && im == 2)
-        {
-            if (((ia % 4 == 0 && ia % 100 != 0) || ia % 400 == 0)  && id > 29)
-                valido = 0;
-            else if (ia % 4 !=0 && id > 28)
-                valido = 0;
-        }
-
-        if(!valido){
-            cout << "Essa data e invalida. ";
-        }
+    if(!valido){
+        cout << "Essa data e invalida. ";
     }
 
     this->dia = id;
@@ -47,36 +44,31 @@ Date::Date(int dia, int mes, int ano){
 Date::Date(string str){
     std::string d, m, a, strm;
     int id, im, ia;
-    
-    for(bool valido = 0; valido == 0;)
+
+    bool valido = 1;
+
+    cout << "str" << endl;
+
+    id = stoi(d);
+    im = stoi(m);
+    ia = stoi(a);
+
+    if(im < 1 || im > 12 || id < 1 || id > 31)
+        valido = 0;
+
+    if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+        valido = 0;
+
+    if(valido && im == 2)
     {
-        valido = 1;
-
-        d = str.substr(0, 2);
-        m = str.substr(3, 2);
-        a = str.substr(6, 4);
-
-        id = stoi(d);
-        im = stoi(m);
-        ia = stoi(a);
-
-        if(im < 1 || im > 12 || id < 1 || id > 31)
+        if (ia % 4 == 0 && id > 29)
             valido = 0;
-
-        if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+        else if (ia % 4 !=0 && id > 28)
             valido = 0;
+    }
 
-        if(valido && im == 2)
-        {
-            if (((ia % 4 == 0 && ia % 100 != 0) || ia % 400 == 0)  && id > 29)
-                valido = 0;
-            else if (ia % 4 !=0 && id > 28)
-                valido = 0;
-        }
-
-        if(!valido){
-            cout << "Essa data e invalida. ";
-        }
+    if(!valido){
+        cout << "Essa data e invalida. ";
     }
 
     this->dia = id;
