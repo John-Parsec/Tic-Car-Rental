@@ -164,6 +164,21 @@ string Date::toString(){
     str += "/";
     str += to_string(ano);
     return str;
-}
+};
+bool Date::operator<(const Date &other) {
+        if (ano < other.ano) {
+            return true;
+        } else if (ano > other.ano) {
+            return false;
+        } else {
+            if (mes < other.mes) {
+                return true;
+            } else if (mes > other.mes) {
+                return false;
+            } else {
+                return dia < other.dia;
+            }
+        }
+    };
 
 
