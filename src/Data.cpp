@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include<ctime>
+
 Date::Date(){
     this->dia = 0;
     this->mes = 0;
@@ -207,7 +208,7 @@ string Date::toString(){
     str += "/";
     str += to_string(ano);
     return str;
-};
+}
 
 //const nao deixa alterar
 bool Date::operator<(const Date &other) {
@@ -224,6 +225,4 @@ bool Date::operator<(const Date &other) {
                 return dia < other.dia;
             }
         }
-};
-
-
+}

@@ -7,7 +7,7 @@ Usuario::Usuario(){
     this->telefone = "";
 }
 
-Usuario::Usuario(string cpf, string nome, string endereço, string telefone){
+Usuario::Usuario(string cpf, string nome, string endereco, string telefone){
     this->cpf = cpf;
     this->nome = nome;
     this->endereco = endereco;

@@ -26,7 +26,6 @@ Date dataInicio, Date dataTermino, Date dataDevolucao, float desconto, float adi
     this->adicional = adicional;
 }
 
-
 string Aluguel::getCodigo(){
     return codigo;
 }
@@ -62,7 +61,6 @@ float Aluguel::getDesconto(){
 float Aluguel::getAdicional(){
     return adicional;
 }
-
 
 void Aluguel::setCodigo(string codigo){
     this->codigo = codigo;
@@ -100,7 +98,6 @@ void Aluguel::setAdicional(float adicional){
     this-> adicional = adicional;
 }
 
-
 float Aluguel::calcularValorFinal(){
     return Date::diasEntre(dataInicio, dataDevolucao) * veiculo.getPrecoPorDia();
 }
@@ -128,4 +125,3 @@ string Aluguel::verificaStatus(){
     Data atual é antes da data inicial, ou seja, não foi iniciada, mas já está agendada
     */
 }
-

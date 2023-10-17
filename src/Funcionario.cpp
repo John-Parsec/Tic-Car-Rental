@@ -5,11 +5,11 @@ int Funcionario::id = 0;
 
 Funcionario::Funcionario(){
     this->habilitacao = "";
-};
+}
 
 Funcionario::Funcionario(string cpf, string nome, string endereco, string telefone, string habilitacao): Usuario(cpf, nome, telefone, endereco){
     this->habilitacao = habilitacao;
-};
+}
 
 Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataInicio, Date dataTermino){
     Aluguel a;
@@ -64,7 +64,7 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
             //retorna aluguel vazio
     
     return a;
-};
+}
 
 void Funcionario::finalizar_aluguel(Aluguel aluguel, Date dataDevolcuacao){
     aluguel.setDataDevolucao(dataDevolcuacao);
@@ -73,16 +73,16 @@ void Funcionario::finalizar_aluguel(Aluguel aluguel, Date dataDevolcuacao){
             historicoAlugueis[i] = aluguel;
         }
     }
-};
+}
 
 void Funcionario::setHabilitacao(string habilitacao){
     this->habilitacao = habilitacao;
-};
+}
 
 string Funcionario::getHabilitacao(){
     return this->habilitacao;
-};
+}
 
 vector<Aluguel> Funcionario::getHistoricoAlugueis(){
     return this->historicoAlugueis;
-};
+}
