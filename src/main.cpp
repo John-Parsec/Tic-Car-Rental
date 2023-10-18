@@ -45,7 +45,7 @@ int main() {
 
         else if(acao == 5)
         {
-            
+            locadora.AlugarVeiculo();
         }
 
         else {acao = 0;}

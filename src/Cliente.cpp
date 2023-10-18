@@ -4,7 +4,7 @@ Cliente::Cliente(){
     this->habilitacao = "00000000000";
 }
 
-Cliente::Cliente(string nome, string cpf, string endereco, string telefone, string habilitacao): Usuario(nome, cpf, endereco, telefone){
+Cliente::Cliente(string nome, string cpf, string endereco, string telefone, string habilitacao): Usuario(cpf, nome, endereco, telefone){
     this->habilitacao = habilitacao;   
 }
 

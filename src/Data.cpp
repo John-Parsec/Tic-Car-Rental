@@ -1,8 +1,5 @@
 #include "CarRental.hpp"
 
-#include<iostream>
-#include<string>
-#include<ctime>
 
 Date::Date(){
     this->dia = 0;
@@ -50,7 +47,7 @@ Date::Date(int dia, int mes, int ano){
 }
 
 Date::Date(string str){
-    std::string d, m, a, strm;
+    string d, m, a, strm;
     int id, im, ia;
 
     bool valido = 1;

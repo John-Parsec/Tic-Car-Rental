@@ -1,7 +1,11 @@
 #ifndef CAR_RENTAL_HPP
 #define CAR_RENTAL_HPP
 
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
+#include <ctime>
+#include <iostream>
+#include <chrono>
 
 using namespace std;
 
@@ -148,6 +152,10 @@ class Locadora{
         vector<Funcionario*> Funcionarios;
         vector<Veiculo*> Veiculos;
     public: 
+        int buscaCliente(string cpf);
+        int buscaVeiuclo(string placa);
+        int buscaFuncionario(string cpf);
+
         void cadastrarCliente();
         void cadastrarFuncionario();
         void cadastrarVeiculo();
@@ -157,6 +165,8 @@ class Locadora{
         void cadastrarVeiculo(Veiculo *veiculo);
 
         void listarVeiculos();
+
+        void AlugarVeiculo();
 };
 
 #endif

@@ -1,5 +1,4 @@
 #include "CarRental.hpp"
-#include <chrono>
 
 int Funcionario::id = 0;
 
