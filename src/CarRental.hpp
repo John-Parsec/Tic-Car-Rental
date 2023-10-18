@@ -142,6 +142,22 @@ class Aluguel{
         string verificaStatus();
 };
 
+class Locadora{
+    private:
+        vector<Cliente*> Clientes;
+        vector<Funcionario*> Funcionarios;
+        vector<Veiculo*> Veiculos;
+    public: 
+        void cadastrarCliente();
+        void cadastrarFuncionario();
+        void cadastrarVeiculo();
+        
+        void cadastrarCliente(Cliente *cliente);
+        void cadastrarFuncionario(Funcionario *funcionario);
+        void cadastrarVeiculo(Veiculo *veiculo);
+
+        void listarVeiculos();
+};
 
 #endif
 
