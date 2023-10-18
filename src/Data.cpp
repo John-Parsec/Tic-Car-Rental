@@ -47,30 +47,45 @@ Date::Date(int dia, int mes, int ano){
 }
 
 Date::Date(string str){
-    string d, m, a, strm;
+    vector<string> data;
+    string strm;
     int id, im, ia;
 
     bool valido = 1;
 
-    cout << "str" << endl;
-
-    id = stoi(d);
-    im = stoi(m);
-    ia = stoi(a);
-
-    if(im < 1 || im > 12 || id < 1 || id > 31)
-        valido = 0;
-
-    if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
-        valido = 0;
-
-    if(valido && im == 2)
-    {
-        if (ia % 4 == 0 && id > 29)
-            valido = 0;
-        else if (ia % 4 !=0 && id > 28)
-            valido = 0;
+    for(int i = 0; i < str.size(); i++){
+        if(str[i] != '/'){
+            strm += str[i];
+        }else{
+            data.push_back(strm);
+            strm = "";
+        }
     }
+    if(strm != "")
+        data.push_back(strm);
+    
+    if(data.size() != 3)
+        valido = 0;
+    else{
+        id = stoi(data[0]);
+        im = stoi(data[1]);
+        ia = stoi(data[2]);
+
+        if(im < 1 || im > 12 || id < 1 || id > 31)
+        valido = 0;
+
+        if(valido && (im == 4 || im == 6 || im == 9 || im == 11) && id > 30)
+            valido = 0;
+
+        if(valido && im == 2)
+        {
+            if (ia % 4 == 0 && id > 29)
+                valido = 0;
+            else if (ia % 4 !=0 && id > 28)
+                valido = 0;
+        }
+    }
+
 
     if(!valido){
         cout << "Essa data e invalida. ";

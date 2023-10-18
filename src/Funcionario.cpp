@@ -51,10 +51,10 @@ Aluguel Funcionario::alugar_veiculo(Cliente cliente, Veiculo veiculo, Date dataI
     }
     if(aluga){
                 float valor;
-                cout<< "Qual o valor do adicional:"<<endl;
+                cout<< "Qual o valor do adicional: ";
                 cin >> valor;
                 a.setAdicional(valor);
-                cout<< "Qual o valor do desconto:"<<endl;
+                cout<< "Qual o valor do desconto: ";
                 cin >> valor;
                 a.setDesconto(valor);
                 historicoAlugueis.push_back(a);
