@@ -2,7 +2,7 @@
 
 void Locadora::cadastrarCliente(){
     string nome, cpf, endereco, telefone, habilitacao;
-
+    cout << "Cadastrando cliente" << endl;
     cout << "Nome: ";
     getline(cin >> ws, nome);
     cout << "CPF: ";
@@ -24,7 +24,7 @@ void Locadora::cadastrarCliente(Cliente *cliente){
 
 void Locadora::cadastrarFuncionario(){
     string nome, cpf, endereco, telefone, habilitacao;
-
+    cout << "Cadastrando funcionario" << endl;
     cout << "Nome: ";
     getline(cin >> ws, nome);
     cout << "CPF: ";
@@ -49,6 +49,7 @@ void Locadora::cadastrarVeiculo(){
     float precoPorDia;
     int anoFabricacao;
 
+    cout << "Cadastrando veiculo" << endl;
     cout << "Placa: ";
     getline(cin >> ws, placa);
     cout << "Marca: ";

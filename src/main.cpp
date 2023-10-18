@@ -3,14 +3,16 @@
 int main() {
     Locadora locadora;
     locadora.cadastrarFuncionario();
+    cout << endl;
     locadora.cadastrarCliente();
+    cout << endl;
     locadora.cadastrarVeiculo();
 
     int acao = 1;
 
     while(acao != 0)
     {
-        cout << 
+        cout << endl <<
         "1 - Cadastrar Cliente" << endl <<
         "2 - Cadastrar Funcionario" << endl <<
         "3 - Cadastrar Veiculo" << endl <<
@@ -19,6 +21,7 @@ int main() {
         "0 - Sair" << endl <<
         "Digite uma opcao: ";
         cin >> acao;
+        cout << endl;
 
         if(acao == 1)
         {
