@@ -16,8 +16,11 @@ int main() {
         "1 - Cadastrar Cliente" << endl <<
         "2 - Cadastrar Funcionario" << endl <<
         "3 - Cadastrar Veiculo" << endl <<
-        "4 - Listar Veiculos" << endl <<
-        "5 - Alugar Veiculo" << endl <<
+        "4 - Alugar Veiculo" << endl <<
+        "5 - Listar Clientes" << endl <<
+        "6 - Listar Funcionarios" << endl <<
+        "7 - Listar Veiculos" << endl <<
+        "8 - Listar Alugueis" << endl <<
         "0 - Sair" << endl <<
         "Digite uma opcao: ";
         cin >> acao;
@@ -40,12 +43,27 @@ int main() {
 
         else if(acao == 4)
         {
-            locadora.listarVeiculos();
+            locadora.AlugarVeiculo();
         }
 
         else if(acao == 5)
         {
-            locadora.AlugarVeiculo();
+            locadora.listarClientes();
+        }
+
+        else if(acao == 6)
+        {
+            locadora.listarFuncionarios();
+        }
+
+        else if(acao == 7)
+        {
+            locadora.listarVeiculos();
+        }
+
+        else if(acao == 8)
+        {
+            locadora.listarAlugueis();
         }
 
         else {acao = 0;}

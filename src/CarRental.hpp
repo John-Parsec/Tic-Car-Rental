@@ -164,7 +164,10 @@ class Locadora{
         void cadastrarFuncionario(Funcionario *funcionario);
         void cadastrarVeiculo(Veiculo *veiculo);
 
+        void listarClientes();
+        void listarFuncionarios();
         void listarVeiculos();
+        void listarAlugueis();
 
         void AlugarVeiculo();
 };

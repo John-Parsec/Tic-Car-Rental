@@ -6,7 +6,7 @@ Funcionario::Funcionario(){
     this->habilitacao = "";
 }
 
-Funcionario::Funcionario(string cpf, string nome, string endereco, string telefone, string habilitacao): Usuario(cpf, nome, telefone, endereco){
+Funcionario::Funcionario(string cpf, string nome, string telefone, string endereco, string habilitacao): Usuario(cpf, nome, telefone, endereco){
     this->habilitacao = habilitacao;
 }
 

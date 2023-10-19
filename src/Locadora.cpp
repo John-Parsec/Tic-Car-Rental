@@ -72,16 +72,68 @@ void Locadora::cadastrarVeiculo(Veiculo *veiculo){
     Veiculos.push_back(veiculo);
 }
 
+void Locadora::listarClientes(){
+    cout << "Nome\tCPF\tEndereco\tTelefone \tNum Habilitacao" << endl;
+    for(unsigned int i = 0; i < Clientes.size(); i++)
+    {
+        Cliente c = *Clientes[i];
+        cout << c.getNome() << "\t" << c.getCpf() << "\t" << c.getEndereco() << "\t"
+        << c.getTelefone() << "\t"<< c.getHabilitacao() << endl; 
+    }
+}
+
+void Locadora::listarFuncionarios(){
+    cout << "Nome\tCPF\tEndereco\tTelefone \tNum Habilitacao" << endl;
+    for(unsigned int i = 0; i < Funcionarios.size(); i++)
+    {
+        Funcionario f = *Funcionarios[i];
+        cout << f.getNome() << "\t" << f.getCpf() << "\t" << f.getEndereco() << "\t"
+        << f.getTelefone() << "\t"<< f.getHabilitacao() << endl; 
+    }
+}
+
 void Locadora::listarVeiculos(){
     cout << "Placa\tMarca\tModelo\tPreco por dia \tAno de fabricacao" << endl;
     for(unsigned int i = 0; i < Veiculos.size(); i++)
     {
         Veiculo v = *Veiculos[i];
         cout << v.getPlaca() << "\t" << v.getMarca() << "\t" << v.getModelo() << "\t"
-        << v.getPrecoPorDia() << "\t"<< v.getAnoFabricacao() << endl; 
+        << "R$" << v.getPrecoPorDia() << "\t"<< v.getAnoFabricacao() << endl; 
     }
 }
 
+/*
+string codigo;
+Cliente cliente;
+Veiculo veiculo;
+Funcionario funcionario;
+Date dataInicio;
+Date dataTermino;
+Date dataDevolucao;
+float desconto;
+float adicional;
+*/
+
+void Locadora::listarAlugueis(){
+    for(unsigned int i = 0; i < Funcionarios.size(); i++)
+    {
+        Funcionario f = *Funcionarios[i];
+        vector<Aluguel> listaAl = f.getHistoricoAlugueis();
+        for(unsigned int j = 0; j < listaAl.size(); j++)
+        {
+            cout << "Codigo: " << listaAl[i].getCodigo() << endl;
+            cout << "Cliente: " << listaAl[i].getCliente().getNome() << " - " << listaAl[i].getCliente().getCpf() << endl;
+            cout << "Funcionario: " << listaAl[i].getFuncionario().getNome() << " - " << listaAl[i].getFuncionario().getCpf() << endl;
+            cout << "Veiculo: " << listaAl[i].getVeiculo().getPlaca() << " - " << listaAl[i].getVeiculo().getMarca() << " - Diaria de R$" << listaAl[i].getVeiculo().getPrecoPorDia() << endl;
+            cout << "Data de inicio: " << listaAl[i].getDataInicio().toString() << endl;
+            cout << "Data de fim: " << listaAl[i].getDataTermino().toString() << endl;
+            cout << "Data de devolucao: " << listaAl[i].getDataDevolucao().toString() << endl;
+            cout << "Desconto: R$" << listaAl[i].getDesconto() << endl;
+            cout << "Valor Adicional: R$" << listaAl[i].getAdicional() << endl;
+            cout << "--------------------------------------------------------------" << endl << endl;
+        }
+    }
+}
 
 int Locadora::buscaCliente(string cpf){
     for (int i = 0; i< Clientes.size(); i++){
